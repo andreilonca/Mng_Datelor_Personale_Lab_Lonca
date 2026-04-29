@@ -11,16 +11,15 @@
     </style>
 
     <script>
-        /* --- TASK LABORATOR: Setează cookie-urile cerute  --- */
+        /* --- task 4 --- */
         document.cookie = "session=test GDPR; path=/";
         document.cookie = "favorite_task=collect Data; path=/";
 
-        /* --- TASK LABORATOR: Funcția de afișare  --- */
+        /* --- Funcția de afișare  --- */
         function alertCookie() {
             alert("Toate cookie-urile site-ului: " + document.cookie);
         }
 
-        /* --- EXEMPLE MOZILLA MDN: Document.cookie [cite: 176] --- */
         
         // 1. Creare cookie cu durată de viață (Persistent)
         function setPersistentCookie() {
@@ -51,15 +50,12 @@
 <body>
 
     <div class="section">
-        <h1>Bine ai venit la laboratorul de Managementul Datelor [cite: 172]</h1>
-        <p>Această pagină demonstrează utilizarea cookie-urilor conform cerințelor de laborator.</p>
-        
+        <h1>Bine ai venit la laboratorul de Managementul Datelor </h1>
         <button onclick="alertCookie()">Show cookies</button>
     </div>
 
     <div class="section">
-        <h2>Exerciții Suplimentare (Sursa: Mozilla MDN) [cite: 176]</h2>
-        <p>Testează manipularea avansată a cookie-urilor:</p>
+        <h2>Exerciții Suplimentare Mozilla</h2>
         <button onclick="setPersistentCookie()">Setează Cookie Persistent (1h)</button>
         <button onclick="checkCookie()">Verifică existență 'session'</button>
         <button onclick="deleteCustomCookie()">Șterge Cookie 'session'</button>
