@@ -20,7 +20,6 @@
             alert("Toate cookie-urile site-ului: " + document.cookie);
         }
 
-        
         // 1. Creare cookie cu durată de viață (Persistent)
         function setPersistentCookie() {
             document.cookie = "user_pref=dark_mode; max-age=3600; path=/"; 
@@ -43,7 +42,7 @@
         // 3. Ștergerea unui cookie
         function deleteCustomCookie() {
             document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            alert("Am șters cookie-ul 'session' conform exemplului MDN.");
+            alert("S-a șters cookie-ul 'session' conform exemplului MDN.");
         }
     </script>
 </head>
