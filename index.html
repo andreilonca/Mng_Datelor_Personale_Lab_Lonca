@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Laborator 8-9 - Managementul Datelor</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        button { margin: 5px; padding: 10px; cursor: pointer; background-color: #0078d4; color: white; border: none; border-radius: 4px; }
+        button:hover { background-color: #005a9e; }
+        .section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+    </style>
+
+    <script>
+        /* --- TASK LABORATOR: Setează cookie-urile cerute  --- */
+        document.cookie = "session=test GDPR; path=/";
+        document.cookie = "favorite_task=collect Data; path=/";
+
+        /* --- TASK LABORATOR: Funcția de afișare  --- */
+        function alertCookie() {
+            alert("Toate cookie-urile site-ului: " + document.cookie);
+        }
+
+        /* --- EXEMPLE MOZILLA MDN: Document.cookie [cite: 176] --- */
+        
+        // 1. Creare cookie cu durată de viață (Persistent)
+        function setPersistentCookie() {
+            document.cookie = "user_pref=dark_mode; max-age=3600; path=/"; 
+            alert("Am creat un cookie persistent care expiră în 1 oră.");
+        }
+
+        // 2. Citirea unui singur cookie (exemplu logic MDN)
+        function checkCookie() {
+            const cookies = document.cookie.split(';');
+            let found = false;
+            for(let i = 0; i < cookies.length; i++) {
+                if (cookies[i].trim().startsWith("session=")) {
+                    found = true;
+                    break;
+                }
+            }
+            alert(found ? "Cookie-ul 'session' există!" : "Cookie-ul 'session' NU a fost găsit.");
+        }
+
+        // 3. Ștergerea unui cookie
+        function deleteCustomCookie() {
+            document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert("Am șters cookie-ul 'session' conform exemplului MDN.");
+        }
+    </script>
+</head>
+<body>
+
+    <div class="section">
+        <h1>Bine ai venit la laboratorul de Managementul Datelor [cite: 172]</h1>
+        <p>Această pagină demonstrează utilizarea cookie-urilor conform cerințelor de laborator.</p>
+        
+        <button onclick="alertCookie()">Show cookies</button>
+    </div>
+
+    <div class="section">
+        <h2>Exerciții Suplimentare (Sursa: Mozilla MDN) [cite: 176]</h2>
+        <p>Testează manipularea avansată a cookie-urilor:</p>
+        <button onclick="setPersistentCookie()">Setează Cookie Persistent (1h)</button>
+        <button onclick="checkCookie()">Verifică existență 'session'</button>
+        <button onclick="deleteCustomCookie()">Șterge Cookie 'session'</button>
+    </div>
+
+</body>
+</html>
